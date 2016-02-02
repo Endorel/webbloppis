@@ -1,64 +1,20 @@
-<!--Header med inloggningsknapp-->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Webbloppis</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
-  </head>
-<body>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-12 logo"><a href='../index.php'><img src="../links/webbloppis_logo.png" class="center-block" alt="Webbloppis logo"></a></div>
-	</div>
-
-	<div class="row">
-	<div class="col-xs-12 wrapper">
-
+{% if session.user %}
+	{% include 'headOnline.html' %}
+{% else %}
+	{% include 'headOffline.html' %}
+	{% include 'searchForm.html' %}
+{% endif %}
 
 <div class = 'info'>
 	<h3>Om Webbloppis.com</h3>
 
-	<p>Webbloppis är en site som föddes ur idén att det borde finnas ett enkelt sätt att sälja flera saker på nätet utan att man ska behöva betala för varje annons, vilket innebär att det inte är ekonomiskt att sälja småsaker som leksaker och mjukisdjur. Efter att ha kollat de ledande siterna för att sälja begagnade prylar konstaterade vi att man fick köpa flera annonsplatser för sig om man har flera föremål att sälja. Vi utvecklade då vårt eget koncept, att månadsprenumerera på ett visst antal annonsplatser.</p><br>
+	<div class='text'>Webbloppis är en site som föddes ur idén att det borde finnas ett enkelt sätt att sälja flera saker på nätet utan att man ska behöva betala för varje annons, vilket innebär att det inte är ekonomiskt att sälja småsaker som leksaker och mjukisdjur. Efter att ha kollat de ledande siterna för att sälja begagnade prylar konstaterade vi att man fick köpa flera annonsplatser för sig om man har flera föremål att sälja. Vi utvecklade då vårt eget koncept, att månadsprenumerera på ett visst antal annonsplatser.</div>
 
-	<p>Vi som äger siten heter Anna, Carin, Helene, Mia och Natalia och vi hoppas att du är nöjd med den. Om inte vill vi gärna att du skickar dina synpunkter till oss på webbloppis.sverige@gmail.com och skriver Synpunkt i ärenderaden.
-	</p><br>
-
-</div>
-<a class = 'back' href="../index.php">Tillbaka</a>
-<div class="row">
-	<div class="col-xs-12 wrapper">
-</div>
-	</div><!--wrapper close-->
-
-<!--Footer-->
-	<div class="row">
-
-			<div class= "col-xs-12 footer">
-				<ul>
-					<li><a class="footerLink" href="support.html">Kundsupport</a></li>
-					<li><a class="footerLink" href="about.html">Om Webbloppis.com</a></li>
-					<li><a class="footerLink" href="membershipinfo.html">Medlemsskap</a></li>
-				</ul>
-			</div>
+	<div class='text'>Vi som äger siten heter Anna, Carin, Helene, Mia och Natalia och vi hoppas att du är nöjd med den. Om inte vill vi gärna att du skickar dina synpunkter till oss på webbloppis.sverige@gmail.com och skriver Synpunkt i ärenderaden.
 	</div>
-</div><!--container fluid close-->
 
-<!--Bootstrap Script--><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+</div>
 
-<!--Start Cookie Script--> <script type="text/javascript" charset="UTF-8" src="http://cookie-script.com/s/6c955dd4e1539b275a77ee179040c1c0.js"></script> <!--End Cookie Script-->
-</body>
-</html>
+<div class="row">
+<div class="col-xs-12 wrapper">
+{% include 'footer.html' %}
